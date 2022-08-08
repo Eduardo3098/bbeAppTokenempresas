@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component tests Should render correctly with primary color 1`] = `
+<Styled(Component)
+  accessibilityRole="button"
+  color="primary"
+  disabled={false}
+  onPress={[MockFunction]}
+>
+  <Styled(Text)
+    disabled={false}
+  >
+    TITLE
+  </Styled(Text)>
+</Styled(Component)>
+`;
+
+exports[`Button component tests Should render correctly with primary color loading 1`] = `
+<Styled(Component)
+  accessibilityRole="button"
+  color="primary"
+  disabled={false}
+  onPress={[MockFunction]}
+  status="WAIT"
+>
+  <Styled(Text)
+    disabled={false}
+  >
+    TITLE
+  </Styled(Text)>
+</Styled(Component)>
+`;

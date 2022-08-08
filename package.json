@@ -1,0 +1,90 @@
+{
+  "name": "bbeAppTokenempresas",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "start:reset-cache": "react-native start --reset-cache",
+    "android:run": "react-native run-android",
+    "android:clean": "cd android && ./gradlew clean",
+    "android:reverse": "adb reverse tcp:8081 tcp:8081",
+    "android:storybook-reverse": "adb reverse tcp:7007 tcp:7007",
+    "ios:run": "react-native run-ios",
+    "ios:pod-install": "cd ios && pod install",
+    "ios:pod-install:repo-update": "cd ios && pod install --repo-update",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update-snapshots": "jest -u",
+    "lint": "eslint .",
+    "prestorybook": "rnstl",
+    "storybook": "yarn run android:storybook-reverse; start-storybook -p 7007",
+    "postinstall": "yarn ios:pod-install; patch-package",
+    "clean-everything": "rm -rf ./node_modules && rm -rf ios/Pods && yarn cache clean"
+  },
+  "dependencies": {
+    "@react-native-masked-view/masked-view": "^0.2.7",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/stack": "^6.2.2",
+    "@types/redux-devtools-extension": "^2.13.2",
+    "axios": "^0.27.2",
+    "lottie-ios": "^3.4.1",
+    "lottie-react-native": "^5.1.4",
+    "prop-types": "^15.8.1",
+    "react": "18.0.0",
+    "react-native": "0.69.3",
+    "react-native-config": "^1.4.6",
+    "react-native-gesture-handler": "^2.5.0",
+    "react-native-reanimated": "^2.9.1",
+    "react-native-responsive-screen": "^1.4.2",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-screens": "^3.15.0",
+    "react-native-svg": "^12.4.3",
+    "react-native-vector-icons": "^9.2.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.26",
+    "@storybook/react-native": "^5.3.25",
+    "@storybook/react-native-server": "^5.3.23",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.5",
+    "babel-traverse": "^6.26.0",
+    "babylon": "^6.18.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
+    "jest-styled-components": "^7.0.8",
+    "metro-react-native-babel-preset": "^0.70.3",
+    "patch-package": "^6.4.7",
+    "react-native-obfuscating-transformer": "^1.0.0",
+    "react-native-storybook-loader": "^2.0.5",
+    "react-native-svg-transformer": "^1.0.0",
+    "react-test-renderer": "18.0.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "<rootDir>/__tests__/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setup.js"
+    ]
+  }
+}

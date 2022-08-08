@@ -1,0 +1,92 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target i386-apple-ios8.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name did_sdk_data_ios
+import Foundation
+import Swift
+@_exported import did_sdk_data_ios
+public enum DataLocalError : Swift.Error {
+  case badEntryParams
+  case valueNotFound
+  case tagNotFound
+  case failedSave
+  case keyChainError
+  case failedUpdate
+  case failedRemove
+  case badFormatKeyChainDictionary
+  case queryAlreadyExist
+  case queryDoesNotExist
+  public static func == (a: did_sdk_data_ios.DataLocalError, b: did_sdk_data_ios.DataLocalError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class DataResponse : ObjectiveC.NSObject {
+  @objc public var code: Swift.Int
+  @objc public var data: Foundation.Data
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class KeyChainBuilder : ObjectiveC.NSObject {
+  public func addkSecClass(str: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecAttrAccount(tag: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecAttrService(service: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecValueData(data: Foundation.Data) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecValueRef(data: Any) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecReturnData(returnData: Swift.Bool) -> did_sdk_data_ios.KeyChainBuilder
+  public func addSecAttrKeyType(type: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecReturnRef(ref: Swift.Bool) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecAttrApplicationTag(tag: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecAttrLabel(label: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecReturnAttributes(returnAttr: Swift.Bool) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecMatchLimit(matchLimit: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecAttrAccessGroup(accessGroup: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func addkSecAttrGeneric(tag: Swift.String) -> did_sdk_data_ios.KeyChainBuilder
+  public func build() -> [Swift.String : Any]
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class NetworkController : ObjectiveC.NSObject, did_sdk_data_ios.NetworkControllerProtocol {
+  @objc public func getRequest(urlString: Swift.String, header: Swift.String, onResponse: @escaping (did_sdk_data_ios.DataResponse) -> Swift.Void)
+  @objc public func postRequest(urlString: Swift.String, header: Swift.String, body: Foundation.Data, onResponse: @escaping (did_sdk_data_ios.DataResponse) -> Swift.Void)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol NetworkControllerProtocol {
+  @objc func getRequest(urlString: Swift.String, header: Swift.String, onResponse: @escaping (did_sdk_data_ios.DataResponse) -> Swift.Void)
+  @objc func postRequest(urlString: Swift.String, header: Swift.String, body: Foundation.Data, onResponse: @escaping (did_sdk_data_ios.DataResponse) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class PersistenceController : ObjectiveC.NSObject {
+  public func set(data: Any, tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws
+  public func set(data: Swift.String, tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws
+  public func set(data: Swift.Int, tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws
+  public func set(data: Swift.Bool, tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws
+  public func get(tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws -> Any
+  public func get(tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws -> Swift.String
+  public func get(tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws -> Swift.Int
+  public func get(tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws -> Swift.Bool
+  public func remove(tag: Swift.String, persistenceType: did_sdk_data_ios.PersistenceType = PersistenceType.preference) throws
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class PersistenceKeyChainController : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public func set(query: Foundation.NSDictionary) throws
+  public func get(query: Foundation.NSDictionary) throws -> Swift.AnyObject?
+  @objc public func update(query: Foundation.NSDictionary, attributesToUpdate: Foundation.NSDictionary) throws
+  @objc public func remove(query: Foundation.NSDictionary) throws
+  public func checkFilter(query: Foundation.NSDictionary) throws -> Swift.Bool
+  @objc deinit
+}
+public enum PersistenceType {
+  case preference
+  public static func == (a: did_sdk_data_ios.PersistenceType, b: did_sdk_data_ios.PersistenceType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension did_sdk_data_ios.DataLocalError : Swift.Equatable {}
+extension did_sdk_data_ios.DataLocalError : Swift.Hashable {}
+extension did_sdk_data_ios.PersistenceType : Swift.Equatable {}
+extension did_sdk_data_ios.PersistenceType : Swift.Hashable {}
