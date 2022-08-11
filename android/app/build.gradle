@@ -78,6 +78,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
+    entryFile: "index.js",
     enableHermes: true,  // clean and rebuild if changing
 ]
 
@@ -245,7 +246,7 @@ android {
     buildTypes {
         debug {
             versionNameSuffix "-debug"
-//             applicationIdSuffix ".debug"
+            //applicationIdSuffix ".debug"
             signingConfig signingConfigs.debug
         }
         release {
@@ -275,7 +276,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
