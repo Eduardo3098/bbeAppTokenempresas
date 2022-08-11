@@ -65,7 +65,7 @@ const Text = styled.Text`
 `;
 
 const BusinessList = styled.FlatList`
-  margin-top: 16;
+  margin-top: 16px;
   overflow: visible;
 `;
 

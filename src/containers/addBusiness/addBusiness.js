@@ -32,7 +32,7 @@ import Confirmation from '../../screens/confirmation';
 class AddBusiness extends Component {
   constructor(props) {
     super(props);
-
+    console.log('props', props);
     this.getData = this.getData.bind(this);
     this.onAddPressed = this.onAddPressed.bind(this);
     this.onCodeChanged = this.onCodeChanged.bind(this);
@@ -93,7 +93,12 @@ class AddBusiness extends Component {
     const {code} = this.state;
     const {url} = this.props;
 
-    register(url, code).then(({success, code: responseCode}) => {
+    console.log('props', this.props);
+    console.log('url', url);
+    register(
+      'https://api-test.pichincha.com/waf-tcs-detectid-validation/detect/public/registration/mobileServices.htm?code=',
+      code,
+    ).then(({success, code: responseCode}) => {
       this.onCancelPressed();
       if (success) {
         this.setState({showNameInput: true});

@@ -14,7 +14,7 @@ import {isValid} from '../../common/util';
 import styles from './circularProgress.styles';
 
 const {width: windowWidth} = Dimensions.get('window');
-//const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const {PI} = Math;
 
 const CircularProgress = ({
@@ -77,35 +77,35 @@ const CircularProgress = ({
         />
       )}
       <G rotation={270} originX={cx} originY={cy}>
-        {/*<AnimatedCircle*/}
-        {/*  stroke={tintColor}*/}
-        {/*  strokeOpacity={tintOpacity}*/}
-        {/*  fill="none"*/}
-        {/*  strokeDasharray={`${circumference}, ${circumference}`}*/}
-        {/*  {...{*/}
-        {/*    strokeDashoffset,*/}
-        {/*    strokeWidth: width,*/}
-        {/*    cx,*/}
-        {/*    cy,*/}
-        {/*    r,*/}
-        {/*    strokeLinecap,*/}
-        {/*  }}*/}
-        {/*/>*/}
-        {/*{isValid(tintColorSecondary) && (*/}
-        {/*  <AnimatedCircle*/}
-        {/*    stroke="url(#grad)"*/}
-        {/*    strokeOpacity={tintOpacitySecondary}*/}
-        {/*    fill="none"*/}
-        {/*    strokeDasharray={`${circumference}, ${circumference}`}*/}
-        {/*    {...{*/}
-        {/*      strokeDashoffset,*/}
-        {/*      strokeWidth: width,*/}
-        {/*      cx,*/}
-        {/*      cy,*/}
-        {/*      r,*/}
-        {/*      strokeLinecap,*/}
-        {/*    }}*/}
-        {/*  />*/}
+        <AnimatedCircle
+          stroke={tintColor}
+          strokeOpacity={tintOpacity}
+          fill="none"
+          strokeDasharray={`${circumference}, ${circumference}`}
+          {...{
+            strokeDashoffset,
+            strokeWidth: width,
+            cx,
+            cy,
+            r,
+            strokeLinecap,
+          }}
+        />
+        {isValid(tintColorSecondary) && (
+          <AnimatedCircle
+            stroke="url(#grad)"
+            strokeOpacity={tintOpacitySecondary}
+            fill="none"
+            strokeDasharray={`${circumference}, ${circumference}`}
+            {...{
+              strokeDashoffset,
+              strokeWidth: width,
+              cx,
+              cy,
+              r,
+              strokeLinecap,
+            }}
+          />
         )}
       </G>
       <ForeignObject

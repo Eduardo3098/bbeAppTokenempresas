@@ -11,7 +11,7 @@ const Item = styled.Text`
   color: ${ColorPalette.secondary};
   border-bottom-width: ${({hasBorder}) => (hasBorder ? 1 : 0)};
   border-bottom-color: ${ColorPalette.graySecondary};
-  padding-vertical: 16;
+  padding-vertical: 16px;
   font-size: ${percentageNormalizer(14)};
 `;
 

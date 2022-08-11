@@ -37,7 +37,7 @@ const ButtonContainer = styled.View`
   align-items: center;
   align-self: center;
   width: 90%;
-  margin-top: 16;
+  margin-top: 16px;
 `;
 
 export default styles;

@@ -82,6 +82,11 @@ project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
 ]
 
+project.ext.envConfigFiles = [
+  release: ".env.production",
+  dev: ".env.debug"
+];
+
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
@@ -246,6 +251,7 @@ android {
     buildTypes {
         debug {
             versionNameSuffix "-debug"
+            //applicationIdSuffix ".debug"
             //applicationIdSuffix ".debug"
             signingConfig signingConfigs.debug
         }

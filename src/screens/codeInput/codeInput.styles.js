@@ -14,7 +14,7 @@ const Input = styled.TextInput`
   border-color: ${ColorPalette.grayLight};
   border-bottom-width: 1px;
   margin-top: 7px;
-  padding-vertical: 5;
+  padding-vertical: 5px;
 `;
 
 export {Text, Input};

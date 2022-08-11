@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-
+import {Clipboard} from 'react-native';
 import styles, {
   Clock,
   Container,
@@ -63,7 +63,7 @@ class SoftToken extends Component {
 
   render() {
     const {visible, token, tokenProgress, tokenTimeLeft} = this.props;
-    const countDowntime = Date.now() + tokenTimeLeft;
+    const countDowntime = Date.now() + 30000;
 
     return (
       <BottomSheet

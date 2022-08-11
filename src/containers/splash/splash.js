@@ -27,7 +27,6 @@ class Splash extends Component {
       status,
     } = this.props;
     const {animationFinished} = this.state;
-    console.log('componentDidUpdate termina');
     if (status === LoadStatus.DONE && animationFinished) {
       replace(Screens.AddBusinessScreen);
     }
@@ -42,9 +41,7 @@ class Splash extends Component {
   }
 
   onAnimationFinish() {
-    console.log('onAnimationFinish inicia');
     this.setState({animationFinished: true});
-    console.log('onAnimationFinish termina');
   }
 
   render() {
