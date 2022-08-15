@@ -1,0 +1,7 @@
+import {
+  BASE_URL,
+  DEFAULT_URL,
+  DEFAULT_TOKEN_DURATION,
+} from '@env';
+
+export default {BASE_URL, DEFAULT_URL, DEFAULT_TOKEN_DURATION};

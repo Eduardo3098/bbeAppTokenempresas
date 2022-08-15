@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "start:reset-cache": "react-native start --reset-cache",
+    "start-reset:reset-cache": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
     "android:run": "react-native run-android",
     "android:clean": "cd android && ./gradlew clean",
     "android:reverse": "adb reverse tcp:8081 tcp:8081",
@@ -73,7 +73,8 @@
     "react-native-obfuscating-transformer": "^1.0.0",
     "react-native-storybook-loader": "^2.0.5",
     "react-native-svg-transformer": "^1.0.0",
-    "react-test-renderer": "18.0.0"
+    "react-test-renderer": "18.0.0",
+    "react-native-dotenv": "^3.3.1"
   },
   "jest": {
     "preset": "react-native",
